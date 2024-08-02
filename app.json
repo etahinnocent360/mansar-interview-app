@@ -1,5 +1,6 @@
 {
   "expo": {
+    "assetBundlePatterns":["**/assets/fonts/*.ttf"],
     "name": "test-app",
     "slug": "test-app",
     "version": "1.0.0",

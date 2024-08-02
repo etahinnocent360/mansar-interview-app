@@ -1,4 +1,5 @@
 import LoanCard from "@/components/loanCard";
+// import { fonts } from "@/hooks/fonts";
 import { FontAwesome5, FontAwesome6 } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
 import { Link } from "expo-router";
@@ -66,7 +67,7 @@ export default function Transaction() {
             </TouchableOpacity>
           </View>
           <ScrollView
-            style={{ marginLeft: -20 }}
+            style={{ marginHorizontal:-20}}
             horizontal={true}
             showsHorizontalScrollIndicator={false}
           >
@@ -96,7 +97,7 @@ export default function Transaction() {
             </TouchableOpacity>
           </View>
           <ScrollView
-            style={{ marginLeft: -20 }}
+            style={{ marginHorizontal:-20}}
             horizontal={true}
             showsHorizontalScrollIndicator={false}
           >
@@ -130,6 +131,7 @@ const styles = StyleSheet.create({
     width: "90%",
     margin: "auto",
     backgroundColor: "'#4c669f', '#3b5998', '#192f6a'",
+    marginBottom:100
   },
   profile: {
     marginTop: 60,
@@ -149,6 +151,7 @@ const styles = StyleSheet.create({
     fontSize: 40,
     fontWeight: "bold",
     color: "#1a2c04",
+    // fontFamily:fonts.muktamalar_bold
   },
   img: {
     height: 45,

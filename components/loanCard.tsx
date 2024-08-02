@@ -11,7 +11,7 @@ export default function LoanCard({ icons, text, color, itemback}) {
     borderRadius: 30,
     borderColor: "#1a2c04",
     backgroundColor:color,
-    marginLeft:20,
+    marginHorizontal:10,
     marginTop:40,
     marginBottom:40
   },

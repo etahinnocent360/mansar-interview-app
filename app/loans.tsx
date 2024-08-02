@@ -47,7 +47,7 @@ export default function Loans() {
             </View>
           </View>
         </View>
-         <View style={styles.moneyCard2}>
+        <View style={styles.moneyCard2}>
           <View style={styles.quick}>
             <Text style={styles.quickText}>Business Loan</Text>
             <TouchableOpacity style={styles.button2}>
@@ -91,25 +91,27 @@ export default function Loans() {
             </View>
           </View>
         </View>
-        <View style={styles.moneyCard}>
-          <View style={styles.quick}>
-            <Text style={styles.quickText}>Health Loan</Text>
-            <TouchableOpacity style={styles.button}>
-              <Text>Paid</Text>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.divider}></View>
-          <View style={styles.card1}>
-            <View style={styles.iconView2}>
-              <MaterialCommunityIcons
-                name="credit-card"
-                size={25}
-                color="black"
-              />
+        <View style={{ marginBottom: 100 }}>
+          <View style={styles.moneyCard}>
+            <View style={styles.quick}>
+              <Text style={styles.quickText}>Health Loan</Text>
+              <TouchableOpacity style={styles.button}>
+                <Text>Paid</Text>
+              </TouchableOpacity>
             </View>
-            <View>
-              <Text style={styles.loanText2}>$1,59.20</Text>
-              <Text style={styles.loanText1}>Approved 04/06/2024</Text>
+            <View style={styles.divider}></View>
+            <View style={styles.card1}>
+              <View style={styles.iconView2}>
+                <MaterialCommunityIcons
+                  name="credit-card"
+                  size={25}
+                  color="black"
+                />
+              </View>
+              <View>
+                <Text style={styles.loanText2}>$1,59.20</Text>
+                <Text style={styles.loanText1}>Approved 04/06/2024</Text>
+              </View>
             </View>
           </View>
         </View>
@@ -148,10 +150,10 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     marginTop: 40,
   },
-    moneyCard2: {
+  moneyCard2: {
     width: "100%",
     height: 220,
-    backgroundColor:'#d2f9de',
+    backgroundColor: "#d2f9de",
     borderRadius: 20,
     marginTop: 40,
   },
@@ -181,7 +183,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#b8d19a",
     borderRadius: 10,
   },
-    button2: {
+  button2: {
     height: 45,
     width: 80,
     alignItems: "center",
@@ -206,7 +208,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-evenly",
     alignItems: "center",
   },
-   iconView1: {
+  iconView1: {
     height: 50,
     width: 50,
     borderRadius: 50,
@@ -222,7 +224,7 @@ const styles = StyleSheet.create({
   },
   loanText3: {
     fontSize: 25,
-    marginLeft:15,
+    marginLeft: 15,
     fontWeight: "600",
     color: "#1a2c04",
   },
