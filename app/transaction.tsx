@@ -4,6 +4,7 @@ import { FontAwesome5, FontAwesome6 } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
 import { Link } from "expo-router";
 import React from "react";
+import AppLoading from 'expo-app-loading';
 import {
   Image,
   ScrollView,
@@ -12,8 +13,31 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-
+import {
+  useFonts,
+  MuktaMalar_200ExtraLight,
+  MuktaMalar_300Light,
+  MuktaMalar_400Regular,
+  MuktaMalar_500Medium,
+  MuktaMalar_600SemiBold,
+  MuktaMalar_700Bold,
+  MuktaMalar_800ExtraBold,
+} from '@expo-google-fonts/mukta-malar';
 export default function Transaction() {
+     let [fontsLoaded] = useFonts({
+    MuktaMalar_200ExtraLight,
+    MuktaMalar_300Light,
+    MuktaMalar_400Regular,
+    MuktaMalar_500Medium,
+    MuktaMalar_600SemiBold,
+    MuktaMalar_700Bold,
+    MuktaMalar_800ExtraBold,
+  });
+
+
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  }
   return (
     <View style={{ backgroundColor: "#fafafa", height: 1000 }}>
       <ScrollView>
@@ -149,9 +173,9 @@ const styles = StyleSheet.create({
   },
   boldText: {
     fontSize: 40,
-    fontWeight: "bold",
+    // fontWeight: "bold",
     color: "#1a2c04",
-    // fontFamily:fonts.muktamalar_bold
+    fontFamily:'MuktaMalar_700Bold'
   },
   img: {
     height: 45,
@@ -160,14 +184,19 @@ const styles = StyleSheet.create({
   loanMessage: {
     fontSize: 15,
     color: "#a8a9a4",
+    fontFamily:'MuktaMalar_300Light',
+    marginTop:-5
   },
   balance: {
     fontSize: 18,
     fontWeight: "600",
+    marginBottom:-15,
     color: "#a8a9a4",
+    fontFamily:'MuktaMalar_500Medium'
   },
   balanceView: {
-    marginTop: 40,
+    marginTop: 30,
+    fontFamily:'MuktaMalar_700Bold'
   },
   card: {
     height: 90,
@@ -213,21 +242,26 @@ const styles = StyleSheet.create({
     fontSize: 17,
     // fontWeight: "600",
     color: "#a8a9a4",
+    fontFamily:'MuktaMalar_500Medium'
   },
   loanText2: {
-    fontSize: 25,
+    fontSize: 35,
     fontWeight: "600",
     color: "#1a2c04",
+    fontFamily:'MuktaMalar_700Bold',
+    marginTop:-15
   },
   quick: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+    
   },
   quickText: {
     fontSize: 30,
     fontWeight: "600",
     color: "#1a2c04",
+    fontFamily:'MuktaMalar_600SemiBold'
   },
   button: {
     height: 45,
@@ -237,5 +271,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     // borderColor:"#a8a9a4",
     borderRadius: 10,
+    fontFamily:'MuktaMalar_300Light'
   },
 });

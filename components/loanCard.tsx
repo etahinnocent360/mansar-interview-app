@@ -1,8 +1,32 @@
 import { FontAwesome, FontAwesome6 } from "@expo/vector-icons";
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-
+import AppLoading from 'expo-app-loading';
+import {
+  useFonts,
+  MuktaMalar_200ExtraLight,
+  MuktaMalar_300Light,
+  MuktaMalar_400Regular,
+  MuktaMalar_500Medium,
+  MuktaMalar_600SemiBold,
+  MuktaMalar_700Bold,
+  MuktaMalar_800ExtraBold,
+} from '@expo-google-fonts/mukta-malar';
 export default function LoanCard({ icons, text, color, itemback}) {
+     let [fontsLoaded] = useFonts({
+    MuktaMalar_200ExtraLight,
+    MuktaMalar_300Light,
+    MuktaMalar_400Regular,
+    MuktaMalar_500Medium,
+    MuktaMalar_600SemiBold,
+    MuktaMalar_700Bold,
+    MuktaMalar_800ExtraBold,
+  });
+
+
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  }
 	const styles = StyleSheet.create({
   card1: {
     height: 220,
@@ -36,12 +60,14 @@ export default function LoanCard({ icons, text, color, itemback}) {
     alignItems: "center",
   },
   textHeader: {
-    fontSize: 30,
-    fontWeight: "500",
+    fontSize: 25,
+    // fontWeight: "500",
+    lineHeight:37,
     color: "#1a2c04",
     marginLeft:10,
     marginTop:15,
-    width:'90%'
+    width:'90%',
+    fontFamily:'MuktaMalar_600SemiBold'
   },
   angle:{
 	backgroundColor:"#1a2c04",

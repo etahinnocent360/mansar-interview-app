@@ -12,11 +12,37 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-
+import AppLoading from 'expo-app-loading';
+import {
+  useFonts,
+  MuktaMalar_200ExtraLight,
+  MuktaMalar_300Light,
+  MuktaMalar_400Regular,
+  MuktaMalar_500Medium,
+  MuktaMalar_600SemiBold,
+  MuktaMalar_700Bold,
+  MuktaMalar_800ExtraBold,
+} from '@expo-google-fonts/mukta-malar';
 export default function Loans() {
+    let [fontsLoaded] = useFonts({
+    MuktaMalar_200ExtraLight,
+    MuktaMalar_300Light,
+    MuktaMalar_400Regular,
+    MuktaMalar_500Medium,
+    MuktaMalar_600SemiBold,
+    MuktaMalar_700Bold,
+    MuktaMalar_800ExtraBold,
+  });
+
+  let fontSize = 24;
+  let paddingVertical = 6;
+
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  }
   return (
     <View style={{ height: 1000, width: "90%", margin: "auto" }}>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.main}>
           <TouchableOpacity style={styles.icon}>
             <Link href={"/transaction"}>
@@ -141,6 +167,8 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "300",
     color: "#a8a9a4",
+    fontFamily:'MuktaMalar_300Light',
+    marginTop:-10
   },
   moneyCard: {
     width: "100%",
@@ -174,6 +202,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: "600",
     color: "#1a2c04",
+    fontFamily:'MuktaMalar_600SemiBold'
   },
   button: {
     height: 45,
@@ -218,14 +247,16 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   loanText2: {
-    fontSize: 25,
+    fontSize: 35,
     fontWeight: "600",
     color: "#1a2c04",
+    fontFamily:'MuktaMalar_500Medium'
   },
   loanText3: {
     fontSize: 25,
     marginLeft: 15,
     fontWeight: "600",
     color: "#1a2c04",
+    fontFamily:'MuktaMalar_700Bold'
   },
 });

@@ -11,8 +11,32 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-
+import AppLoading from 'expo-app-loading';
+import {
+  useFonts,
+  MuktaMalar_200ExtraLight,
+  MuktaMalar_300Light,
+  MuktaMalar_400Regular,
+  MuktaMalar_500Medium,
+  MuktaMalar_600SemiBold,
+  MuktaMalar_700Bold,
+  MuktaMalar_800ExtraBold,
+} from '@expo-google-fonts/mukta-malar';
 export default function Home() {
+     let [fontsLoaded] = useFonts({
+    MuktaMalar_200ExtraLight,
+    MuktaMalar_300Light,
+    MuktaMalar_400Regular,
+    MuktaMalar_500Medium,
+    MuktaMalar_600SemiBold,
+    MuktaMalar_700Bold,
+    MuktaMalar_800ExtraBold,
+  });
+
+
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  }
   return (
     <LinearGradient
       start={{ x: 1, y: 3 }}
@@ -68,7 +92,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     margin: "auto",
     fontWeight: "bold",
-    fontFamily: "",
+    fontFamily: 'MuktaMalar_700Bold',
     paddingTop: 20,
   },
   introduction: {
@@ -77,6 +101,8 @@ const styles = StyleSheet.create({
     margin: "auto",
     textAlign: "center",
     color: "#a8a9a4",
+    lineHeight:20,
+    fontFamily:'MuktaMalar_400Regular',
     paddingVertical: 10,
   },
   terms: {

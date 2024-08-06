@@ -6,7 +6,32 @@ import Octicons from "@expo/vector-icons/Octicons";
 import Timeline from "react-native-timeline-flatlist";
 import { TabBarIcon } from "./navigation/TabBarIcon";
 import { StyleSheet } from "react-native";
+import AppLoading from 'expo-app-loading';
+import {
+  useFonts,
+  MuktaMalar_200ExtraLight,
+  MuktaMalar_300Light,
+  MuktaMalar_400Regular,
+  MuktaMalar_500Medium,
+  MuktaMalar_600SemiBold,
+  MuktaMalar_700Bold,
+  MuktaMalar_800ExtraBold,
+} from '@expo-google-fonts/mukta-malar';
 export default function TimelineInfo() {
+      let [fontsLoaded] = useFonts({
+    MuktaMalar_200ExtraLight,
+    MuktaMalar_300Light,
+    MuktaMalar_400Regular,
+    MuktaMalar_500Medium,
+    MuktaMalar_600SemiBold,
+    MuktaMalar_700Bold,
+    MuktaMalar_800ExtraBold,
+  });
+
+
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  }
   const data = [
     {
 //       time: "09:00",
@@ -30,6 +55,7 @@ export default function TimelineInfo() {
 //       description: "Event 3 Description",
       icon: <FontAwesome name="money" size={22} color="black" />,
       circleColor: "#a9d0b5",
+      fontFamily:'MuktaMalar_500Medium'
     },
   ];
   return (
